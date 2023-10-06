@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[阿月]50音入门</title>
+  <style>
+    iframe{
+        height: 300px;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    h1{
+        display: flex;
+        justify-content: center; 
+    }
+    .randomGen{
+        height: 30px; width: 60px;
+        border: 1px bla;
+    }
+  </style>
+</head>
+<body>
+
+    <h1 >50音</h1>
+<h5 style="display: flex; justify-content: center;">随机出任何字符都能反应过来，就算过关 尝试<div id="counter">0</div>次</h5> 
+    <div class="container" style="margin-bottom: 60px;">
+        <!-- random ping -->
+        <button id="randomPing">随机平假名</button> <br>
+        <div class="randomGen" id="pingDiv"></div>
+        <script>
+            let counter = document.getElementById('counter');
+            var counterValue = parseInt(counter.innerText);
+            let toggleButton = document.getElementById('randomPing');
+            let generatePingDiv = document.getElementById('pingDiv');
+            toggleButton.addEventListener('click',function(){
+                generatePingDiv.innerText = random(ping);
+                generatePingDiv2.innerText = '';
+                generatePingDiv3.innerText = '';
+                counter.innerHTML = counterValue += 1; 
+            })    ;
+        </script>
+        <!-- random pian -->
+        <button id="randomPian">随机片假名</button>
+        <div class="randomGen" id="pianDiv"></div>
+        <script>
+            let toggleButton2 = document.getElementById('randomPian');
+            let generatePingDiv2 = document.getElementById('pianDiv');
+            toggleButton2.addEventListener('click',function(){
+                generatePingDiv.innerText = '';
+                generatePingDiv2.innerText = random(pian);
+                generatePingDiv3.innerText = '';
+                counter.innerText = counterValue += 1; 
+            })    ;
+        </script>
+        
+        <!-- random yin -->
+        <button id="randomYin">随机读音</button> <br>
+        <div class="randomGen" id="yinDiv"></div>
+        <script>
+            let toggleButton3 = document.getElementById('randomYin');
+            let generatePingDiv3 = document.getElementById('yinDiv');
+            toggleButton3.addEventListener('click',function(){
+                generatePingDiv.innerText = '';
+                generatePingDiv2.innerText = '';
+                generatePingDiv3.innerText = random(yin);
+                counter.innerText = counterValue += 1; 
+            })    ;
+        </script>
+        
+        
+        </div>
+        <hr>
+<div class="container" style="margin-top: 40px;">
+  <iframe src="source/01a.html" frameborder="0"></iframe> 
+  <iframe src="source/02ka.html" frameborder="0"></iframe>
+  <iframe src="source/03s.html" frameborder="0"></iframe>
+  <iframe src="source/04t.html" frameborder="0"></iframe>
+  <iframe src="source/05n.html" frameborder="0"></iframe>
+</div>
+  <br>
+
+<div class="container">
+  <iframe src="source/06h.html" frameborder="0"></iframe>
+  <iframe src="source/07m.html" frameborder="0"></iframe>
+  <iframe src="source/08y.html" frameborder="0"></iframe>
+  <iframe src="source/09r.html" frameborder="0"></iframe>
+  <iframe src="source/10w.html" frameborder="0"></iframe>
+</div>
+<br>
+<!-- dictionary -->
+<script>
+    let ping = Array('あ',
+'い',
+'う',
+'え',
+'お',
+
+'か',
+'き',
+'く',
+'け',
+'こ',
+
+'さ',
+'し',
+'す',
+'せ',
+'そ',
+
+'た',
+'ち',
+'つ',
+'て',
+'と',
+
+'な',
+'に',
+'ぬ',
+'ね',
+'の',
+
+'は',
+'ひ',
+'ふ',
+'へ',
+'ほ',
+
+'ま',
+'み',
+'む',
+'め',
+'も',
+
+'や',
+'ゆ',
+'よ',
+
+'ら',
+'り',
+'る',
+'れ',
+'ろ',
+
+'わ',
+'を',
+'ん')
+let pian = Array('ア',
+'イ',
+'ウ',
+'エ',
+'オ',
+
+'カ',
+'キ',
+'ク',
+'ケ',
+'コ',
+
+'サ',
+'シ',
+'ス',
+'セ',
+'ソ',
+
+'タ',
+'チ',
+'ツ',
+'テ',
+'ト',
+
+'ナ',
+'ニ',
+'ヌ',
+'ネ',
+'ノ',
+
+'ハ',
+'ヒ',
+'フ',
+'ヘ',
+'ホ',
+
+'マ',
+'ミ',
+'ム',
+'メ',
+'モ',
+
+'ヤ',
+'ユ',
+'ヨ',
+
+'ラ',
+'リ',
+'ル',
+'レ',
+'ロ',
+
+'ワ',
+'ヲ',
+'ン')
+let yin = Array('a',
+'i',
+'u',
+'e',
+'o',
+
+'ka',
+'ki',
+'ku',
+'ke',
+'ko',
+
+'sa',
+'shi',
+'su',
+'se',
+'so',
+
+'ta',
+'chi',
+'tsu',
+'te',
+'to',
+
+'na',
+'ni',
+'nu',
+'ne',
+'no',
+
+'ha',
+'hi',
+'fu',
+'he',
+'ho',
+
+'ma',
+'mi',
+'mu',
+'me',
+'mo',
+
+'ya',
+'yu',
+'yo',
+
+'ra',
+'ri',
+'ru',
+'re',
+'ro',
+
+'wa',
+'o',
+'n')
+
+// 46个 0-45 index
+function random(array){
+    let order = Math.floor(Math.random() * 46)
+    return array[order]
+}
+
+</script>
+
+</body>
+</html>

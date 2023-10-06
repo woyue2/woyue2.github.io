@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button id="toggle-button" style="position: fixed; top:0">隐藏读音</button><br>
+    <table>
+        <tr>
+          <th>平假名</th>
+          <th>片假名</th>
+          <th>读音</th>
+        </tr>
+        <tr>
+          <td>あ</td>
+          <td>ア</td>
+          <td class="reading">a</td>
+        </tr>
+        <tr>
+          <td>い</td>
+          <td>イ</td>
+          <td class="reading">i</td>
+        </tr>
+        <tr>
+          <td>う</td>
+          <td>ウ</td>
+          <td class="reading">u</td>
+        </tr>
+        <tr>
+          <td>え</td>
+          <td>エ</td>
+          <td class="reading">e</td>
+        </tr>
+        <tr>
+          <td>お</td>
+          <td>オ</td>
+          <td class="reading">o</td>
+        </tr>
+    </table>
+
+<script>
+    let toggleButton = document.getElementById('toggle-button');
+    let table = document.querySelector('table');
+
+    toggleButton.addEventListener('click', function() {
+    table.classList.toggle('hide-reading');
+});
+</script>
+
+</body>
+</html>
